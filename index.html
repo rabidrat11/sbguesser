@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dungeon GeoGuesser</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Dungeon GeoGuesser</h1>
+    <p class="tagline">Catacombs room recognition trainer</p>
+  </header>
+
+  <main>
+    <!-- Difficulty menu -->
+    <section id="menu" class="card">
+      <h2>Pick a difficulty</h2>
+      <div class="difficulties">
+        <button class="diff-btn" data-diff="easy">
+          <span class="diff-name">Easy</span>
+          <span class="diff-count" id="count-easy"></span>
+        </button>
+        <button class="diff-btn" data-diff="medium">
+          <span class="diff-name">Medium</span>
+          <span class="diff-count" id="count-medium"></span>
+        </button>
+        <button class="diff-btn" data-diff="hard">
+          <span class="diff-name">Hard</span>
+          <span class="diff-count" id="count-hard"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Game -->
+    <section id="game" class="card hidden">
+      <div class="game-head">
+        <button id="back-btn" class="ghost-btn" type="button">&larr; Difficulty</button>
+        <span id="diff-label" class="pill"></span>
+        <span id="score" class="score"></span>
+      </div>
+
+      <div class="photo-wrap">
+        <img id="photo" alt="Dungeon room screenshot">
+      </div>
+
+      <form id="guess-form" autocomplete="off">
+        <div class="input-row">
+          <div class="autocomplete">
+            <input id="guess-input" type="text" placeholder="Type the room name&hellip;" spellcheck="false">
+            <ul id="suggestions" class="suggestions hidden"></ul>
+          </div>
+          <button id="guess-btn" type="submit">Guess</button>
+          <button id="skip-btn" type="button" class="ghost-btn">Skip</button>
+        </div>
+      </form>
+
+      <div id="result" class="result hidden"></div>
+      <button id="next-btn" class="next-btn hidden" type="button">Next &rarr;</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="pool-info"></span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
